@@ -15,9 +15,12 @@ fieldset {
     height: 30px;
 }
 
-#Journalentry {
-    width: 250px;
-    height: 110px;
+.journalEntry {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 3px solid blue;
+    
 }
 
 .element {
