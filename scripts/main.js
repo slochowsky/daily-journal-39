@@ -1,8 +1,5 @@
-import { useJournalEntries } from "./JournalDataProvider.js";
-import EntryListComponent from "./JournalEntryList.js";
+import { getEntries } from "./JournalDataProvider.js";
+import EntryFormComponent from "./JournalForm.js";
 
-EntryListComponent()
-useJournalEntries()
-
-const arrayOfJournalEntryies = useJournalEntries()
-console.log("all of the entries:", arrayOfJournalEntryies)
+EntryFormComponent()
+getEntries()
