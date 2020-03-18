@@ -1,22 +1,22 @@
+let entries = []
+
 const eventHub = document.querySelector(".container")
 
+
 const dispatchStateChangeEvent = () => {
-    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+    const entryStateChangedEvent = new CustomEvent("entryStateChanged")
 
-    eventHub.dispatchEvent(noteStateChangedEvent)
+    eventHub.dispatchEvent(entryStateChangedEvent)
 }
-
-
-let entries = []
 
 
 export const getEntries = () => {
     return fetch('http://localhost:8088/entries')
         .then(response => response.json())
         .then(
-            entry => {
-                entry = entry.slice()
-                console.log("STATE OF ENTRIES ARRAY", entry)
+            parsedEntries => {
+                entries = parsedEntries.slice()
+                console.log("STATE OF ENTRIES ARRAY", entries)
             }
         )
 }
@@ -34,5 +34,5 @@ export const saveEntry = entry => {
 }
 
 export const useEntries = () => {
-    return entries
+    return entries.slice()
 }
